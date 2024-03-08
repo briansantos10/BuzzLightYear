@@ -2,10 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
     <title>SkillsUSA</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");
+    </style>
   </head>
   <body>
-    <h1>SkillsUSA Project</h1>
-    <script src="main.js"></script>
+    <h1 id="toggler">Click To Launch</h1>
+    <div class="container">
+      <div class="circle" id="circle">
+        <p class="hidden-content">
+          <!-- Add your content here -->
+          <!-- For example: -->
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+      <div class="pulse">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 5"></span>
+      </div>
+
+      <div class="rocket" id="rocket" onclick="expandCircle()">
+        <img src="/public/assets/rocket.png" alt="wf" />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
