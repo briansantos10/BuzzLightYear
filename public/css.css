@@ -1,0 +1,222 @@
+  
+        body {
+            font-family: Google Sans, Helvetica Neue, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #00162a;
+            color: #b6b4b4;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: normal;
+            line-height: 1.375rem;
+            display: flex;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        #chat-container {
+            width: 100%;
+            height: 100%;
+            background-color: #0f1c28;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        #chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            background-color: #0f1c28;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            margin-top: 90px;
+            width: 52%;
+        }
+
+        #user-input {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 50%;
+            margin-bottom: 15px;
+        }
+
+        #user-input input {
+            flex: 1;
+            padding: 20px;
+            border: none;
+            border-radius: 20px;
+            margin-right: 10px;
+            background-color: #132842;
+            color: #b6b4b4;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: normal;
+            line-height: 1.375rem;
+            margin-bottom: 10px;
+        }
+
+        /*
+
+        #user-input::before {
+            content: "★";
+            font-size: 25px;
+            background-image: linear-gradient(to bottom right, #8a2929 0%, #096cc9 100%);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-right: 5px;
+        }
+
+        */
+
+        #welcome-text {
+            font-weight: bold;
+            color: #2ecc71;
+            margin-bottom: 10px;
+            background-image: linear-gradient(to bottom right, #555050 0%, #073e72 100%);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 3.8rem;
+            line-height: 4rem;
+            font-weight: 500;
+            letter-spacing: -.03em;
+        }
+
+        #info-text {
+            font-weight: bold;
+            color: #2ecc71;
+            margin-bottom: 10px;
+            background-color: #253d5c;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 3.8rem;
+            line-height: 4rem;
+            font-weight: 500;
+            letter-spacing: -.03em;
+        }
+
+        #suggestions {
+            display: flex;
+            overflow-x: auto;
+            background-color: #0f1c28;
+            padding: 10px;
+            border-top: 50px solid #0f1c28;
+            border-radius: 8px;
+            height: 34%;
+        }
+        .suggestion {
+            background-color: #132842;
+            color: #b6b4b4;
+            padding: 12px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 16px;
+            width: 23%; /* Adjusted width */
+            text-align: center;
+            position: relative;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: normal;
+            line-height: 1.375rem;
+        }
+
+
+        .suggestion::after {
+            content: "O";
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            font-size: 20px;
+            background-image: linear-gradient(to bottom right, #e6acac 0%, #096cc9 100%);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .suggestion:hover {
+            background-color: #005599;
+        }
+
+        #side-panel {
+            width: 17%;
+            height: 100%;
+            background-color: #132842;
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 1;
+            background-color: #132842;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        }
+
+        #side-panel #Explore-text {
+            font-weight: bold;
+            color: #2ecc71;
+            padding: 20px 49px;
+            margin-top: 20px;
+            background-image: linear-gradient(to bottom right, #837777 0%, #0f5ba2 100%);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 3.0rem;
+            line-height: 4rem;
+            font-weight: 500;
+            letter-spacing: -.03em;
+        }
+
+        .menu__item {
+            display: block;
+            padding: 16px 1px;
+            color: #b6b4b4;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            }
+
+            .menu__item a {
+            display: block;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #132842;
+            color: #b6b4b4;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: normal;
+            line-height: 1.375rem;
+            }
+
+            .menu__item a:hover {
+            background-color: #b6b4b4;
+            color: #132842;
+            }
+
+            #quiz-container {
+                display: none;
+                width: 100%;
+                text-align: left;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+    
+            .question {
+                margin-bottom: 20px;
+            }
+    
+            .options {
+                margin-top: 10px;
+            }
+    
+            .option {
+                display: block;
+                margin-bottom: 10px;
+            }
