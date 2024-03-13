@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script
+      src="https://kit.fontawesome.com/effe0ae4aa.js"
+      crossorigin="anonymous"
+    ></script>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
     <title>SkillsUSA</title>
@@ -12,13 +16,116 @@
     <h1 id="toggler">Click To Launch</h1>
     <div class="container">
       <div class="circle" id="circle">
-        <p class="hidden-content">
-          <!-- Add your content here -->
-          <!-- For example: -->
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
+        <div class="hidden-content">
+          <div class="flex">
+            <nav>
+              <button class="new_chat">
+                <span> New Chat </span>
+                <i class="fa-solid fa-star outside"></i>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </button>
+              <div class="bottom">
+                <div class="links">
+                  <a href="#">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    Quiz
+                  </a>
+                  <a href="#">
+                    <i class="fa-regular fa-image"></i>
+                    Our School
+                  </a>
+                  <a href="#">
+                    <i class="fa-brands fa-readme"></i>
+                    Information
+                  </a>
+                </div>
+              </div>
+            </nav>
+
+            <div id="chat-container">
+              <div id="chat-messages">
+                <h1>
+                  Hello, Human <br />
+                  <span>How Can I Help You?</span>
+                </h1>
+                <div id="suggestions">
+                  <div
+                    class="suggestion"
+                    onclick="selectSuggestion('Lorem ipsum dolor sit amet, elit?')"
+                  >
+                    <div class="top">
+                      <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="suggestion"
+                    onclick="selectSuggestion('Lorem ipsum dolor sit amet, elit?')"
+                  >
+                    <div class="top">
+                      <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                  </div>
+                  <div
+                    class="suggestion"
+                    onclick="selectSuggestion('Lorem ipsum dolor sit amet, elit?')"
+                  >
+                    <div class="top">
+                      <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                  </div>
+                  <div
+                    class="suggestion"
+                    onclick="selectSuggestion('Lorem ipsum dolor sit amet, elit?')"
+                  >
+                    <div class="top">
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="suggestion"
+                    onclick="selectSuggestion('Lorem ipsum dolor sit amet, elit?')"
+                  >
+                    <div class="top">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="suggestion"
+                    onclick="selectSuggestion('Lorem ipsum dolor sit amet, elit?')"
+                  >
+                    <div class="top">
+                      <p>Lorem ipsum dolor sit amet, elit?</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="user-input">
+                <input
+                  type="text"
+                  id="user-message"
+                  placeholder="Type your message..."
+                  oninput="handleUserInput()"
+                  onkeyup="checkEnter()"
+                />
+                <i class="fa-solid fa-paper-plane"></i>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="pulse">
+      <div id="pulse" class="pulse">
         <span style="--i: 1"></span>
         <span style="--i: 2"></span>
         <span style="--i: 3"></span>

@@ -1,3 +1,4 @@
+pulse = document.getElementById("pulse");
 toggler = document.getElementById("toggler");
 toggler.addEventListener("click", expandCircle);
 
@@ -7,4 +8,5 @@ function expandCircle() {
 
   circle.classList.toggle("expand");
   rocket.classList.toggle("launch");
+  pulse.classList.toggle("hide");
 }
