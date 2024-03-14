@@ -19,7 +19,7 @@
         <div class="hidden-content">
           <div class="flex">
             <nav>
-              <button class="new_chat">
+              <button class="new_chat" onclick="startNewChat()">
                 <span> New Chat </span>
                 <i class="fa-solid fa-star outside"></i>
                 <div class="stars">
@@ -28,7 +28,7 @@
               </button>
               <div class="bottom">
                 <div class="links">
-                  <a href="#">
+                  <a href="#" onclick="showQuiz()">
                     <i class="fa-regular fa-pen-to-square"></i>
                     Quiz
                   </a>
@@ -46,7 +46,7 @@
 
             <div id="chat-container">
               <div id="chat-messages">
-                <h1>
+                <h1 id="welcome-text">
                   Hello, Human <br />
                   <span>How Can I Help You?</span>
                 </h1>
@@ -111,7 +111,35 @@
                 </div>
               </div>
 
-              <div id="user-input">
+                <!-- This is just the quiz stuff ignore for now-->
+                <div id="quiz-container" style="display: none;">
+                    <div class="wrapper">
+                        <div id="quiz">
+                            <div class="progress-container">
+                                <div id="progress-bar"></div>
+                            </div>
+                            <div class="left">
+                                <h2>Welcome to<br>
+                                    <span> the Quiz</span>
+                                </h2>
+                                <p></p>
+                                <p id="question"></p>
+                            </div>
+                            <div class="right">
+                                <div class="buttons">
+                                    <button id="btn0"><span class="letter-box">A</span><span id="choice0"></span></button>
+                                    <button id="btn1"><span class="letter-box">B</span><span id="choice1"></span></button>
+                                    <button id="btn2"><span class="letter-box">C</span><span id="choice2"></span></button>
+                                    <button id="btn3"><span class="letter-box">D</span><span id="choice3"></span></button>
+                                </div>                                                          
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <!--End of quiz-->
+
+              <div id="user-input" class="expander">
                 <input
                   type="text"
                   id="user-message"
@@ -134,7 +162,7 @@
       </div>
 
       <div class="rocket" id="rocket" onclick="expandCircle()">
-        <img src="assets/noun-rocket-1758.png" alt="wf" />
+        <img src="assets/rocket.png" alt="wf" />
       </div>
     </div>
 
