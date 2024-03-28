@@ -1,104 +1,169 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const pulse = document.getElementById("pulse");
-  const toggler = document.getElementById("toggler");
-  toggler.addEventListener("click", expandCircle);
+const pulse = document.getElementById("pulse");
+const toggler = document.getElementById("toggler");
+toggler.addEventListener("click", expandCircle);
 
-  function expandCircle() {
-    const circle = document.getElementById("circle");
-    const rocket = document.getElementById("rocket");
-    circle.classList.toggle("expand");
-    rocket.classList.toggle("launch");
-    pulse.classList.toggle("hide");
+function expandCircle() {
+  const circle = document.getElementById("circle");
+  const rocket = document.getElementById("rocket");
+  circle.classList.toggle("expand");
+  rocket.classList.toggle("launch");
+  pulse.classList.toggle("hide");
 
-    const hiddenContent = document.querySelectorAll(".circle .hidden-content");
-    hiddenContent.forEach((element) => {
-      element.classList.toggle("show-content-animation");
-    });
+  const hiddenContent = document.querySelectorAll(".circle .hidden-content");
+  hiddenContent.forEach((element) => {
+    element.classList.toggle("show-content-animation");
+  });
 
-    const title = document.getElementById("title");
-    const suggestions = document.getElementById("suggestions");
-    const chatInput = document.getElementById("chat-input");
-    title.classList.toggle("animation");
-    suggestions.classList.toggle("animation");
-    chatInput.classList.toggle("animation");
+  const title = document.getElementById("title");
+  const suggestions = document.getElementById("suggestions");
+  const chatInput = document.getElementById("chat-input");
+  title.classList.toggle("animation");
+  suggestions.classList.toggle("animation");
+  chatInput.classList.toggle("animation");
+}
+
+function restartPage() {
+  window.location.reload();
+}
+
+/* quiz stuff here */
+
+function showQuiz() {
+  document.getElementById("chat-messages").style.display = "none";
+  document.getElementById("user-input").style.display = "none";
+  document.getElementById("suggestions").style.display = "none";
+  document.getElementById("welcome-text").style.display = "none";
+  document.getElementById("quiz-container").style.display = "block";
+  startQuiz();
+}
+
+function startQuiz() {
+  populate();
+  document.querySelector(".progress-container").style.display = "block";
+}
+
+function Question(text, choices, answer) {
+  this.text = text;
+  this.choices = choices;
+  this.answer = answer;
+}
+
+Question.prototype.correctAnswer = function (choice) {
+  return choice === this.answer;
+};
+
+function Quiz(questions) {
+  this.score = 0;
+  this.questions = questions;
+  this.questionIndex = 0;
+}
+
+Quiz.prototype.getQuestionIndex = function () {
+  return this.questions[this.questionIndex];
+};
+
+Quiz.prototype.isEnded = function () {
+  return this.questions.length === this.questionIndex;
+};
+
+Quiz.prototype.guess = function (answer) {
+  if (this.getQuestionIndex().correctAnswer(answer)) {
+    this.score++;
   }
 
-  const chatInput = document.querySelector(".chat-input textarea");
-  const sendChatBtn = document.querySelector(".chat-input i");
-  const chatBox = document.querySelector(".chatbox");
-  const introSection = document.querySelector(".intro");
-  const suggestions = document.querySelectorAll(".suggestion p");
-  let userMessage;
-  const API_KEY = "placeholder";
+  this.questionIndex++;
+};
 
-  const createChatLi = (message, className) => {
-    const chatLi = document.createElement("li");
-    chatLi.classList.add("chat", className);
-    const chatContent =
-      className === "outgoing"
-        ? `<p>${message}</p>`
-        : `<i class="fa-regular fa-comment"></i><p>${message}</p>`;
-    chatLi.innerHTML = chatContent;
-    return chatLi;
+var questions = [
+  new Question("Click any button to continue: ", ["A", "B", "C", "D"], "A"),
+  new Question(
+    "aLorem ipsum dolor sit amet, consectetur adipiscing elit.?",
+    ["Aa", "Ba", "Ca", "Da"],
+    "Ba"
+  ),
+  new Question(
+    "bLorem ipsum dolor sit amet, consectetur adipiscing elit.?",
+    ["Ac", "Bc", "Cc", "Dc"],
+    "Cc"
+  ),
+  new Question(
+    "cLorem ipsum dolor sit amet, consectetur adipiscing elit.?",
+    ["Ad", "Bd", "Cd", "Dd"],
+    "Dd"
+  ),
+  new Question(
+    "dLorem ipsum dolor sit amet, consectetur adipiscing elit.?",
+    ["A", "B", "C", "D"],
+    "A"
+  ),
+];
+
+var quiz = new Quiz(questions);
+
+populate();
+
+let isFirstButtonClicked = false;
+
+function guess(id, guess) {
+  var button = document.getElementById(id);
+  button.onclick = function () {
+    if (!isFirstButtonClicked) {
+      isFirstButtonClicked = true;
+      document.querySelector(".left h2").style.display = "none";
+      document.querySelector(".left h2").nextElementSibling.style.display =
+        "none";
+    }
+    quiz.guess(guess);
+    populate();
   };
+}
 
-  const generateResponse = (incomingChatLi) => {
-    const API_URL = "https://api.openai.com/v1/chat/completions";
-    const messageElement = incomingChatLi.querySelector("p");
+function showProgress() {
+  var currentQuestionNumber = quiz.questionIndex + 1;
+  var element = document.getElementById("progress");
+  element.innerHTML =
+    '<div class="progress-number">' +
+    currentQuestionNumber +
+    "</div>" +
+    " of " +
+    '<div class="progress-number">' +
+    quiz.questions.length +
+    "</div>";
+}
 
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${API_KEY}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [
-          { role: "system", content: "You are a helpful assistant." },
-          { role: "user", content: userMessage },
-        ],
-      }),
-    };
+function showScores() {
+  var gameOver = "<h1>Your Score: </h1>";
+  gameOver +=
+    "<h2 id='score' style='text-align:center;'>" + quiz.score + "/5</h2>";
+  var element = document.getElementById("quiz");
+  element.innerHTML = gameOver;
+}
 
-    fetch(API_URL, requestOptions)
-      .then((res) => res.json())
-      .then((data) => {
-        messageElement.textContent = data.choices[0].message.content;
-      })
-      .catch((error) => {
-        messageElement.textContent =
-          "Sorry, I am not able to process your request at the moment.";
-      })
-      .finally(() => chatBox.scrollTo(0, chatBox.scrollHeight));
-  };
+function populate() {
+  if (quiz.isEnded()) {
+    showScores();
+  } else {
+    var questionElement = document.getElementById("question");
+    var choices = quiz.getQuestionIndex().choices;
 
-  const handleChat = () => {
-    userMessage = chatInput.value.trim();
-    if (!userMessage) return;
+    questionElement.innerHTML = quiz.getQuestionIndex().text;
 
-    chatBox.appendChild(createChatLi(userMessage, "outgoing"));
-    chatBox.scrollTo(0, chatBox.scrollHeight);
+    for (var i = 0; i < choices.length; i++) {
+      var choiceElement = document.getElementById("choice" + i);
+      choiceElement.innerHTML = choices[i];
+      guess("btn" + i, choices[i]);
+    }
 
-    introSection.classList.add("active");
-    chatBox.classList.add("active");
+    updateProgressBar();
+  }
+}
 
-    setTimeout(() => {
-      const incomingChatLi = createChatLi("Thinking...", "incoming");
-      chatBox.appendChild(incomingChatLi);
-      chatBox.scrollTo(0, chatBox.scrollHeight);
-      generateResponse(incomingChatLi);
-    }, 600);
+function updateProgressBar() {
+  var progressBar = document.getElementById("progress-bar");
+  var currentQuestionNumber = quiz.questionIndex + 1;
+  var totalQuestions = quiz.questions.length;
+  var progressPercentage = (currentQuestionNumber / totalQuestions) * 100;
+  progressBar.style.width = progressPercentage + "%";
+}
 
-    chatInput.value = "";
-  };
-
-  sendChatBtn.addEventListener("click", handleChat);
-
-  suggestions.forEach((suggestion) => {
-    suggestion.addEventListener("click", () => {
-      const suggestionText = suggestion.textContent.replace(/\s+/g, " ").trim();
-      chatInput.value = suggestionText;
-    });
-  });
-});
+/* end of quiz stuff*/

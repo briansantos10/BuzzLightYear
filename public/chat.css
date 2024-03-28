@@ -54,8 +54,7 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding-top: 5rem;
-  padding-bottom: 2rem;
+  padding-top: 4rem;
 }
 h1 {
   font-size: 3.5rem;
@@ -63,12 +62,11 @@ h1 {
 }
 p {
   color: rgb(53, 53, 53);
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-align: left;
 }
 a {
   text-decoration: none;
-  font-size: 1rem;
 }
 /* Pulse */
 #toggler {
@@ -258,6 +256,7 @@ a {
   color: #565355;
   padding: 10px;
   border-radius: 20px;
+  font-size: 1rem;
 }
 .circle .bottom .links a:hover {
   background-color: #e0e0e0;
@@ -283,6 +282,7 @@ a {
   width: 100%;
   overflow-y: auto;
   display: none;
+  scroll-behavior: smooth;
 }
 .chatbox.active {
   display: block;
@@ -325,18 +325,12 @@ a {
   display: flex;
   gap: 1rem;
   align-items: center;
+  margin-bottom: 2rem;
 }
 .chat-input.animation {
-  animation: expand_size 1.9s ease-in-out;
+  animation: fadeIn 1.9s ease-in-out;
 }
-@keyframes expand_size {
-  from {
-    width: 25%;
-  }
-  to {
-    width: 100%;
-  }
-}
+
 .chat-input textarea {
   height: 80%;
   width: 100%;
