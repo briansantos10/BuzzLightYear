@@ -57,13 +57,20 @@ body {
   padding-top: 4rem;
 }
 h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
+  margin-bottom: 1rem;
+}
+h2,
+h3,
+h4 {
+  margin-bottom: 1rem;
 }
 p {
   color: rgb(53, 53, 53);
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-align: left;
+  line-height: 1.3rem;
 }
 a {
   text-decoration: none;
@@ -383,6 +390,7 @@ a {
   margin-bottom: 5rem;
   overflow: hidden;
   white-space: nowrap;
+  font-size: 3.5rem;
 }
 .title.animation {
   animation: typeIn 3.3s steps(100, end) forwards;

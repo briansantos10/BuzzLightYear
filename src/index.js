@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const OpenAI = require("openai");
-  const ASSISTANT_ID = "asst_YDiPefQcyToUNmrmhkUb7W0l";
+  const ASSISTANT_ID = "";
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: "",
     dangerouslyAllowBrowser: true,
   });
 
@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     introSection.classList.add("active");
     chatBox.classList.add("active");
+    document.getElementById("info_page").classList.remove("active");
 
     setTimeout(() => {
       const incomingChatLi = createChatLi("Thinking...", "incoming");

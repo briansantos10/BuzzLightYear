@@ -1,0 +1,28 @@
+.info {
+  display: none;
+  flex-direction: column;
+  height: 80vh;
+  padding: 30px 20px 100px;
+  width: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  animation: fadeIn 1.9s ease-in-out;
+}
+.info.active {
+  display: block;
+}
+.info ul {
+  margin-bottom: 2rem;
+}
+.info ul li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+.info .rmctc {
+  background-color: #ffc107;
+  padding: 1rem;
+  border-radius: 15px;
+}
+.info p {
+  margin-bottom: 2rem;
+}
