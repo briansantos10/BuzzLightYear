@@ -6,7 +6,8 @@
       crossorigin="anonymous"
     ></script>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="chat.css" />
+    <link rel="stylesheet" href="info.css" />
     <title>SkillsUSA</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");
@@ -17,137 +18,210 @@
     <div class="container">
       <div class="circle" id="circle">
         <div class="hidden-content">
-          <div class="flex">
-            <nav>
-              <button class="new_chat" onclick="startNewChat()">
-                <span> New Chat </span>
-                <i class="fa-solid fa-star outside"></i>
-                <div class="stars">
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </button>
-              <div class="bottom">
-                <div class="links">
-                  <a href="#" onclick="showQuiz()">
-                    <i class="fa-regular fa-pen-to-square"></i>
-                    Quiz
-                  </a>
-                  <a href="#">
-                    <i class="fa-regular fa-image"></i>
-                    Our School
-                  </a>
-                  <a href="#">
-                    <i class="fa-brands fa-readme"></i>
-                    Information
-                  </a>
+          <div class="hidden-content">
+            <div class="flex chat_container">
+              <div class="left">
+                <nav>
+                  <button class="new_chat" onclick="restartPage()">
+                    <span> Restart </span>
+                    <i class="fa-solid fa-star outside"></i>
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </button>
+                  <div class="bottom">
+                    <div class="links">
+                      <a href="#" onclick="showQuiz()">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        Quiz
+                      </a>
+                      <a href="#">
+                        <i class="fa-regular fa-image"></i>
+                        Our School
+                      </a>
+                      <a href="#" onclick="showInfo()">
+                        <i class="fa-brands fa-readme"></i>
+                        Information
+                      </a>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+              <div class="right">
+                <div class="in-chat">
+                  <ul class="chatbox"></ul>
+                  <div class="intro">
+                    <h1 id="title" class="title">
+                      Hello, Human <br />
+                      <span>How can I help you?</span>
+                    </h1>
+                    <div id="suggestions" class="suggestions">
+                      <div class="suggestion">
+                        <p>
+                          What is SkillsUSA and how does RMCTC incorporate it
+                          into its programs?
+                        </p>
+                      </div>
+                      <div class="suggestion">
+                        <p>
+                          Tell me about the history and legacy of SkillsUSA.
+                        </p>
+                      </div>
+                      <div class="suggestion">
+                        <p>
+                          What are some examples of professional skills students
+                          develop at RMCTC?
+                        </p>
+                      </div>
+                      <div class="suggestion">
+                        <p>
+                          How does RMCTC integrate workplace skills into its
+                          curriculum?
+                        </p>
+                      </div>
+                      <div class="suggestion">
+                        <p>
+                          Explain the community partnerships RMCTC has through
+                          SkillsUSA.
+                        </p>
+                      </div>
+                      <div class="suggestion">
+                        <p>
+                          How does RMCTC support students in developing their
+                          technical skills?
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="info_page" class="info">
+                    <h2>
+                      SkillsUSA at Reading Muhlenberg Career & Technology Center
+                    </h2>
+                    <p>
+                      At RMCTC, SkillsUSA is more than just an organization;
+                      it's a cornerstone of our educational approach. As a
+                      chapter with students from all program areas, we embody
+                      the spirit of SkillsUSA through our commitment to personal
+                      development, workplace skills, and technical excellence.
+                    </p>
+                    <p>
+                      Through the Framework, SkillsUSA students hone their
+                      hands-on skills against current industry standards in more
+                      than 130 occupational areas, from 3-D Animation to Welding
+                      and nearly everything in between. At the same time, they
+                      develop the transformative career-readiness skills —
+                      teamwork, communication, professionalism, leadership and
+                      more — that fuel career and life success.
+                    </p>
+                    <h3>Our Approach</h3>
+                    <p>
+                      We integrate the SkillsUSA framework into every aspect of
+                      our educational experience. Whether it's through classroom
+                      learning, co-op opportunities, internships, or community
+                      service, we strive to equip our students with the skills
+                      they need to succeed in their careers from day one.
+                    </p>
+
+                    <h3>Community Engagement</h3>
+                    <p>
+                      Our commitment to SkillsUSA extends beyond the classroom.
+                      Through partnerships with local businesses like East Penn
+                      Manufacturing, Fraser Advanced, and Reading Hospital,
+                      among others, our students gain real-world experience
+                      while making meaningful contributions to our community.
+                    </p>
+                    <h3>Personal and Professional Growth</h3>
+                    <p>
+                      At RMCTC, we prioritize the development of essential
+                      skills such as resume writing, interviewing, and conflict
+                      resolution, all of which are integral parts of the
+                      SkillsUSA framework. Additionally, our technical skills
+                      curriculum is seamlessly integrated into our daily
+                      schedule, ensuring that every student receives a
+                      comprehensive education.
+                    </p>
+                    <h3>Core Values</h3>
+                    <p>
+                      We are guided by the core values of integrity, respect,
+                      responsibility, community, and service. These values
+                      inform everything we do, from our interactions with
+                      students and staff to our partnerships with industry
+                      leaders.
+                    </p>
+                    <h3>Impact</h3>
+                    <p>
+                      The impact of SkillsUSA at RMCTC is evident in the success
+                      stories of our students. From gaining confidence and
+                      discovering passions to securing employment in high-demand
+                      fields, SkillsUSA has transformed countless lives within
+                      our school community.
+                    </p>
+                    <h3>Symbols and Traditions</h3>
+                    <p>
+                      From the iconic SkillsUSA emblem to the solemn recitation
+                      of the SkillsUSA Pledge, our school embraces the symbols
+                      and traditions that define the SkillsUSA experience. These
+                      rituals serve as reminders of our shared commitment to
+                      professionalism, service, and lifelong learning.
+                    </p>
+                    <br />
+                    <div class="rmctc">
+                      <h2>Join Us</h2>
+                      <p>
+                        At RMCTC, SkillsUSA isn't just an organization; it's a
+                        community dedicated to empowering students and shaping
+                        the future of the skilled trades. Join us as we continue
+                        to uphold the ideals of SkillsUSA and prepare the next
+                        generation of skilled professionals and leaders.
+                      </p>
+                    </div>
+                  </div>
+                  <div id="chat-input" class="chat-input">
+                    <textarea
+                      placeholder="Enter a message..."
+                      required
+                    ></textarea>
+                    <i class="fa-regular fa-paper-plane"></i>
+                  </div>
                 </div>
               </div>
-            </nav>
+            </div>
 
-            <div id="chat-container">
-              <div id="chat-messages">
-                <h1 id="welcome-text">
-                  Hello, Human <br />
-                  <span>How Can I Help You?</span>
-                </h1>
-                <div id="suggestions">
-                  <div
-                    class="suggestion"
-                    onclick="selectSuggestion('Lorem ipsum dolor sit amet, elit?')"
-                  >
-                    <div class="top">
-                      <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit.
-                      </p>
-                    </div>
+            <div id="quiz-container" style="display: none">
+              <div class="wrapper">
+                <div id="quiz">
+                  <div class="progress-container">
+                    <div id="progress-bar"></div>
                   </div>
-                  <div
-                    class="suggestion"
-                    onclick="selectSuggestion('Lorem ipsum dolor sit amet, elit?')"
-                  >
-                    <div class="top">
-                      <p>Lorem ipsum dolor sit amet consectetur.</p>
-                    </div>
+                  <div class="left">
+                    <h2>
+                      Welcome to<br />
+                      <span> the Quiz</span>
+                    </h2>
+                    <p></p>
+                    <p id="question"></p>
                   </div>
-                  <div
-                    class="suggestion"
-                    onclick="selectSuggestion('Lorem ipsum dolor sit amet, elit?')"
-                  >
-                    <div class="top">
-                      <p>Lorem ipsum dolor sit amet consectetur.</p>
-                    </div>
-                  </div>
-                  <div
-                    class="suggestion"
-                    onclick="selectSuggestion('Lorem ipsum dolor sit amet, elit?')"
-                  >
-                    <div class="top">
-                      <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    class="suggestion"
-                    onclick="selectSuggestion('Lorem ipsum dolor sit amet, elit?')"
-                  >
-                    <div class="top">
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    class="suggestion"
-                    onclick="selectSuggestion('Lorem ipsum dolor sit amet, elit?')"
-                  >
-                    <div class="top">
-                      <p>Lorem ipsum dolor sit amet, elit?</p>
+                  <div class="right">
+                    <div class="buttons">
+                      <button id="btn0">
+                        <span class="letter-box">A</span
+                        ><span id="choice0"></span>
+                      </button>
+                      <button id="btn1">
+                        <span class="letter-box">B</span
+                        ><span id="choice1"></span>
+                      </button>
+                      <button id="btn2">
+                        <span class="letter-box">C</span
+                        ><span id="choice2"></span>
+                      </button>
+                      <button id="btn3">
+                        <span class="letter-box">D</span
+                        ><span id="choice3"></span>
+                      </button>
                     </div>
                   </div>
                 </div>
-              </div>
-
-                <!-- This is just the quiz stuff ignore for now-->
-                <div id="quiz-container" style="display: none;">
-                    <div class="wrapper">
-                        <div id="quiz">
-                            <div class="progress-container">
-                                <div id="progress-bar"></div>
-                            </div>
-                            <div class="left">
-                                <h2>Welcome to<br>
-                                    <span> the Quiz</span>
-                                </h2>
-                                <p></p>
-                                <p id="question"></p>
-                            </div>
-                            <div class="right">
-                                <div class="buttons">
-                                    <button id="btn0"><span class="letter-box">A</span><span id="choice0"></span></button>
-                                    <button id="btn1"><span class="letter-box">B</span><span id="choice1"></span></button>
-                                    <button id="btn2"><span class="letter-box">C</span><span id="choice2"></span></button>
-                                    <button id="btn3"><span class="letter-box">D</span><span id="choice3"></span></button>
-                                </div>                                                          
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            <!--End of quiz-->
-
-              <div id="user-input" class="expander">
-                <input
-                  type="text"
-                  id="user-message"
-                  placeholder="Type your message..."
-                  oninput="handleUserInput()"
-                  onkeyup="checkEnter()"
-                />
-                <i class="fa-solid fa-paper-plane"></i>
               </div>
             </div>
           </div>
@@ -161,11 +235,11 @@
         <span style="--i: 5"></span>
       </div>
 
-      <div class="rocket" id="rocket" onclick="expandCircle()">
-        <img src="assets/rocket.png" alt="wf" />
+      <div class="rocket" id="rocket" onclick="">
+        <i class="fa-solid fa-star"></i>
       </div>
     </div>
-
+    <script src="/main.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
