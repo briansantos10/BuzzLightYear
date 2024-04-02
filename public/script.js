@@ -36,6 +36,5 @@ function showInfo() {
 
   document.querySelector(".chatbox").classList.remove("active");
   document.getElementById("quiz").classList.remove("active");
-  document.getElementById("chat-input").style.display = "none";
   document.getElementById("our-school-container").style.display = "none";
 }

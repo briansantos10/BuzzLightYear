@@ -7,10 +7,8 @@ function showQuiz() {
   document.querySelector(".intro").classList.add("active");
   document.querySelector(".chatbox").classList.remove("active");
   document.getElementById("info_page").classList.remove("active");
-  document.getElementById("chat-input").style.display = "none";
   document.getElementById("our-school-container").style.display = "none";
   resetQuiz();
-  hidePages();
 }
 
 var scoreDisplay = document.getElementById("score");
@@ -253,7 +251,6 @@ function turnLightOff() {
 function showSchool() {
   document.querySelector(".intro").style.display = "none";
   document.querySelector(".chatbox").style.display = "none";
-  document.getElementById("chat-input").style.display = "none";
   document.getElementById("suggestions").style.display = "none";
 
   document.getElementById("quiz").classList.remove("active");
@@ -263,8 +260,6 @@ function showSchool() {
 
   document.getElementById("our-school-container").style.display = "block";
 }
-
-hidePages();
 
 const progressBar = document.getElementById("progress-bar");
 const barcket = document.getElementById("barcket");
@@ -285,4 +280,3 @@ progressBar.addEventListener("transitionend", () => {
 });
 
 window.addEventListener("resize", updateBarcketPosition);
-
