@@ -7,8 +7,8 @@ function showQuiz() {
   document.querySelector(".intro").classList.add("active");
   document.querySelector(".chatbox").classList.remove("active");
   document.getElementById("info_page").classList.remove("active");
+  document.getElementById("our-school-container").style.display = "none";
   resetQuiz();
-  hidePages();
 }
 
 var scoreDisplay = document.getElementById("score");
@@ -31,12 +31,12 @@ function populate() {
     updateProgressBar();
 
     if (quiz.questionIndex === 0) {
-      document.querySelector(".left h2").style.display = "block";
-      document.querySelector(".left h2").nextElementSibling.style.display =
+      document.querySelector(".leftq h1").style.display = "block";
+      document.querySelector(".leftq h1").nextElementSibling.style.display =
         "block";
     } else {
-      document.querySelector(".left h2").style.display = "none";
-      document.querySelector(".left h2").nextElementSibling.style.display =
+      document.querySelector(".leftq h1").style.display = "none";
+      document.querySelector(".leftq h1").nextElementSibling.style.display =
         "none";
     }
   }
@@ -48,25 +48,48 @@ const BONUS_COOLDOWN = 30000;
 function showScores() {
   var scoreContainer = document.getElementById("score-container");
   scoreContainer.style.display = "block";
-
+  
+  var scoreDisplay = document.getElementById("score");
   scoreDisplay.textContent = quiz.score;
+
   var tryAgainButton = document.getElementById("try-again");
   tryAgainButton.style.display = "block";
-
   if (quiz.score > 1) {
     var bonusButton = document.getElementById("bonus-button");
     bonusButton.style.display = "block";
     bonusButton.addEventListener("click", handleBonusClick);
   }
 
-  // Hide unnecessary elements
-  startConfetti();
-  document.querySelector(".left h2").style.display = "none";
-  document.querySelector(".left h2").nextElementSibling.style.display = "none";
-  document.querySelector(".right").style.display = "none";
-  document.querySelector(".progress-container").style.display = "none";
   document.getElementById("question").style.display = "none";
+  document.querySelector(".rightq").style.display = "none";
+  document.querySelector(".progress-container").style.display = "none";
+  document.querySelector(".leftq h1").style.display = "none";
+
+  resetBarcketPosition();
 }
+
+
+function resetQuiz() {
+  quiz.score = 0;
+  quiz.questionIndex = 0;
+
+  var scoreContainer = document.getElementById("score-container");
+  scoreContainer.style.display = "none";
+  var tryAgainButton = document.getElementById("try-again");
+  tryAgainButton.style.display = "none";
+  var bonusButton = document.getElementById("bonus-button");
+  bonusButton.style.display = "none";
+  document.querySelector(".leftq h1").style.display = "block";
+  document.querySelector(".leftq h1").nextElementSibling.style.display = "block";
+  document.querySelector(".rightq").style.display = "block";
+  document.querySelector(".progress-container").style.display = "block";
+  document.getElementById("question").style.display = "block";
+  populate();
+
+  // Reset progress bar position
+  resetBarcketPosition();
+}
+
 
 function handleBonusClick() {
   var currentTime = Date.now();
@@ -85,48 +108,6 @@ function handleBonusClick() {
   }
 }
 
-function startConfetti() {
-  var chatContainer = document.getElementById("chat-container");
-  var containerRect = chatContainer.getBoundingClientRect();
-
-  var duration = 5 * 1000;
-
-  var animationEnd = Date.now() + duration;
-  var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
-
-  function randomInRange(min, max) {
-    return Math.random() * (max - min) + min;
-  }
-
-  var interval = setInterval(function () {
-    var timeleft = animationEnd - Date.now();
-
-    if (timeleft <= 0) {
-      return clearInterval(interval);
-    }
-
-    var particleCount = 50 * (timeleft / duration);
-    for (var i = 0; i < particleCount; i++) {
-      var x =
-        containerRect.left +
-        containerRect.width * 0.4 +
-        Math.random() * containerRect.width * 0.6; // Adjust the starting position to the right
-      var y = containerRect.top - 10;
-      confetti(
-        Object.assign({}, defaults, {
-          particleCount: 1,
-          origin: { x: x / window.innerWidth, y: y / window.innerHeight },
-          angle: randomInRange(180 - 45, 180 + 45),
-          spread: randomInRange(30, 60),
-          startVelocity: randomInRange(20, 40),
-          ticks: 200,
-          colors: ["#0000ff", "#ff0000", "#ffffff"],
-        })
-      );
-    }
-  }, 250);
-}
-
 function resetBarcketPosition() {
   const progressWidth = progressBar.offsetWidth;
   const barcketWidth = barcket.offsetWidth;
@@ -135,25 +116,6 @@ function resetBarcketPosition() {
   barcket.style.left = barcketleft - progressleft + "px";
 }
 
-function resetQuiz() {
-  quiz.score = 0;
-  quiz.questionIndex = 0;
-
-  var scoreContainer = document.getElementById("score-container");
-  scoreContainer.style.display = "none";
-  var tryAgainButton = document.getElementById("try-again");
-  tryAgainButton.style.display = "none";
-  var bonusButton = document.getElementById("bonus-button");
-  bonusButton.style.display = "none";
-  document.querySelector(".left h2").style.display = "block";
-  document.querySelector(".left h2").nextElementSibling.style.display = "block";
-  document.querySelector(".right").style.display = "block";
-  document.querySelector(".progress-container").style.display = "block";
-  document.getElementById("question").style.display = "block";
-  populate();
-
-  resetBarcketPosition();
-}
 
 function startQuiz() {
   populate();
@@ -287,37 +249,17 @@ function turnLightOff() {
 }
 
 function showSchool() {
-  document.getElementById("chat-messages").style.display = "none";
-  document.getElementById("user-input").style.display = "none";
+  document.querySelector(".intro").style.display = "none";
+  document.querySelector(".chatbox").style.display = "none";
   document.getElementById("suggestions").style.display = "none";
-  document.getElementById("welcome-text").style.display = "none";
 
-  document.getElementById("quiz-container").style.display = "none";
-
-  document.getElementById("information-container").style.display = "none";
+  document.getElementById("quiz").classList.remove("active");
+  document.querySelector(".intro").classList.remove("active");
+  document.querySelector(".chatbox").classList.remove("active");
+  document.getElementById("info_page").classList.remove("active");
 
   document.getElementById("our-school-container").style.display = "block";
 }
-
-function showInformation() {
-  document.getElementById("chat-messages").style.display = "none";
-  document.getElementById("user-input").style.display = "none";
-  document.getElementById("suggestions").style.display = "none";
-  document.getElementById("welcome-text").style.display = "none";
-
-  document.getElementById("quiz-container").style.display = "none";
-
-  document.getElementById("our-school-container").style.display = "none";
-  document.getElementById("information-container").style.display = "block";
-  hideQuiz();
-}
-
-// function hidePages() {
-//   document.getElementById("our-school-container").style.display = "none";
-//   document.getElementById("information-container").style.display = "none";
-// }
-
-hidePages();
 
 const progressBar = document.getElementById("progress-bar");
 const barcket = document.getElementById("barcket");

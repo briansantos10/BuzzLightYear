@@ -36,7 +36,7 @@
                         <i class="fa-regular fa-pen-to-square"></i>
                         Quiz
                       </a>
-                      <a href="#">
+                      <a href="#" onclick="showSchool()">
                         <i class="fa-regular fa-image"></i>
                         Our School
                       </a>
@@ -217,54 +217,42 @@
                       </div>
                     </div>
 
+                    <div id="score-container">
+                      <h2>Your Score!</h2>
+                      <span id="score">0</span>
+                      <div id="buttons-container">
+                        <button id="try-again" onclick="resetQuiz()">Try Again</button>
+                        <button id="bonus-button" onclick="turnLightOn()">Turn On Bonus</button>
+                      </div>
+                    </div>
+
                     <div id="score-container"></div>
                   </div>
 
                   <!-- End of quiz -->
+
+                    <div id="our-school-container" class="our-school-container">
+                      <h1>Our Community</h1>
+                      <p>Take a look of what makes us stronger</p>
+                      <div class="gallery">
+                        <img src="Assets/mc.jpg" alt="place_holder">
+                        <img src="Assets/mc2.jpg" alt="place_holder">
+                        <img src="Assets/mc.jpg" alt="place_holder">
+                        <img src="Assets/mc.jpg" alt="place_holder">
+                        <img src="Assets/mc2.jpg" alt="place_holder">
+                        <img src="Assets/mc.jpg" alt="place_holder">
+                        <img src="Assets/mc.jpg" alt="place_holder">
+                        <img src="Assets/mc2.jpg" alt="place_holder">
+                        <img src="Assets/mc.jpg" alt="place_holder">
+                      </div>
+                  </div>
+                  
                   <div id="chat-input" class="chat-input">
                     <textarea
                       placeholder="Enter a message..."
                       required
                     ></textarea>
                     <i class="fa-regular fa-paper-plane"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div id="quiz-container" style="display: none">
-              <div class="quiz-container">
-                <div id="quiz">
-                  <div class="progress-container">
-                    <div id="progress-bar"></div>
-                  </div>
-                  <div class="left">
-                    <h2>
-                      Welcome to<br />
-                      <span> the Quiz</span>
-                    </h2>
-                    <p></p>
-                    <p id="question"></p>
-                  </div>
-                  <div class="right">
-                    <div class="buttons">
-                      <button id="btn0">
-                        <span class="letter-box">A</span
-                        ><span id="choice0"></span>
-                      </button>
-                      <button id="btn1">
-                        <span class="letter-box">B</span
-                        ><span id="choice1"></span>
-                      </button>
-                      <button id="btn2">
-                        <span class="letter-box">C</span
-                        ><span id="choice2"></span>
-                      </button>
-                      <button id="btn3">
-                        <span class="letter-box">D</span
-                        ><span id="choice3"></span>
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
