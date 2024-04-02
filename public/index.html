@@ -8,6 +8,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="chat.css" />
     <link rel="stylesheet" href="info.css" />
+    <link rel="stylesheet" href="quiz.css" />
     <title>SkillsUSA</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");
@@ -176,6 +177,50 @@
                       </p>
                     </div>
                   </div>
+
+                  <!-- Quiz -->
+
+                  <div id="quiz" class="quiz-container">
+                    <div id="quiz">
+                      <div class="grid">
+                        <div class="leftq">
+                          <h1>
+                            Welcome to<br />
+                            <span> the Quiz</span>
+                          </h1>
+                          <p></p>
+                          <p id="question"></p>
+                        </div>
+                        <div class="rightq">
+                          <div class="buttons">
+                            <button id="btn0">
+                              <span class="letter-box">A</span
+                              ><span id="choice0"></span>
+                            </button>
+                            <button id="btn1">
+                              <span class="letter-box">B</span
+                              ><span id="choice1"></span>
+                            </button>
+                            <button id="btn2">
+                              <span class="letter-box">C</span
+                              ><span id="choice2"></span>
+                            </button>
+                            <button id="btn3">
+                              <span class="letter-box">D</span
+                              ><span id="choice3"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="progress-container">
+                        <div id="progress-bar"></div>
+                      </div>
+                    </div>
+
+                    <div id="score-container"></div>
+                  </div>
+
+                  <!-- End of quiz -->
                   <div id="chat-input" class="chat-input">
                     <textarea
                       placeholder="Enter a message..."
@@ -188,7 +233,7 @@
             </div>
 
             <div id="quiz-container" style="display: none">
-              <div class="wrapper">
+              <div class="quiz-container">
                 <div id="quiz">
                   <div class="progress-container">
                     <div id="progress-bar"></div>
@@ -241,5 +286,6 @@
     </div>
     <script src="/main.js"></script>
     <script src="script.js"></script>
+    <script src="quiz.js"></script>
   </body>
 </html>
