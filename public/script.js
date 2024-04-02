@@ -36,6 +36,23 @@ function showInfo() {
 
   document.querySelector(".chatbox").classList.remove("active");
   document.getElementById("quiz").classList.remove("active");
+  document.getElementById("our-school-container").style.display = "none";
+}
+
+function restartPage() {
+  window.location.reload();
+}
+
+// info page
+function showInfo() {
+  const infoPage = document.getElementById("info_page");
+  const introSection = document.querySelector(".intro");
+
+  introSection.classList.add("active");
+  infoPage.classList.add("active");
+
+  document.querySelector(".chatbox").classList.remove("active");
+  document.getElementById("quiz").classList.remove("active");
 }
 
 /* quiz stuff here */
