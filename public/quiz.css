@@ -172,15 +172,14 @@
   outline: none;
 }
 
-
 .our-school-container {
   display: none;
-  padding: 80px 200px 100px;
   animation: fadeIn 1.4s ease-in-out;
   text-align: center;
+  height: 80vh;
+  padding: 30px 20px 100px;
+  width: 100%;
 }
-
-
 .our-school-container h1 {
   padding-bottom: 20px;
   text-align: center;
@@ -196,13 +195,13 @@
 .gallery {
   --s: 150px;
   --g: 10px;
-  --f: 1.5; 
-  
+  --f: 1.5;
+
   display: grid;
   gap: var(--g);
-  width: calc(3*var(--s) + 2*var(--g));
+  width: calc(3 * var(--s) + 2 * var(--g));
   aspect-ratio: 1;
-  grid-template-columns: repeat(3,auto);
+  grid-template-columns: repeat(3, auto);
 }
 
 .gallery > img {
@@ -213,11 +212,11 @@
   object-fit: cover;
   cursor: pointer;
   filter: grayscale(80%);
-  transition: .35s linear;
+  transition: 0.35s linear;
 }
 
-.gallery img:hover{
+.gallery img:hover {
   filter: grayscale(0);
-  width:  calc(var(--s)*var(--f));
-  height: calc(var(--s)*var(--f));
+  width: calc(var(--s) * var(--f));
+  height: calc(var(--s) * var(--f));
 }

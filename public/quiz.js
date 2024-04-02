@@ -48,7 +48,7 @@ const BONUS_COOLDOWN = 30000;
 function showScores() {
   var scoreContainer = document.getElementById("score-container");
   scoreContainer.style.display = "block";
-  
+
   var scoreDisplay = document.getElementById("score");
   scoreDisplay.textContent = quiz.score;
 
@@ -68,7 +68,6 @@ function showScores() {
   resetBarcketPosition();
 }
 
-
 function resetQuiz() {
   quiz.score = 0;
   quiz.questionIndex = 0;
@@ -80,7 +79,8 @@ function resetQuiz() {
   var bonusButton = document.getElementById("bonus-button");
   bonusButton.style.display = "none";
   document.querySelector(".leftq h1").style.display = "block";
-  document.querySelector(".leftq h1").nextElementSibling.style.display = "block";
+  document.querySelector(".leftq h1").nextElementSibling.style.display =
+    "block";
   document.querySelector(".rightq").style.display = "block";
   document.querySelector(".progress-container").style.display = "block";
   document.getElementById("question").style.display = "block";
@@ -89,7 +89,6 @@ function resetQuiz() {
   // Reset progress bar position
   resetBarcketPosition();
 }
-
 
 function handleBonusClick() {
   var currentTime = Date.now();
@@ -115,7 +114,6 @@ function resetBarcketPosition() {
   const barcketleft = progressleft + progressWidth - barcketWidth / 2;
   barcket.style.left = barcketleft - progressleft + "px";
 }
-
 
 function startQuiz() {
   populate();
@@ -250,9 +248,6 @@ function turnLightOff() {
 
 function showSchool() {
   document.querySelector(".intro").style.display = "none";
-  document.querySelector(".chatbox").style.display = "none";
-  document.getElementById("suggestions").style.display = "none";
-
   document.getElementById("quiz").classList.remove("active");
   document.querySelector(".intro").classList.remove("active");
   document.querySelector(".chatbox").classList.remove("active");
