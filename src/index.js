@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     introSection.classList.add("active");
     chatBox.classList.add("active");
     document.getElementById("info_page").classList.remove("active");
+    document.getElementById("quiz").classList.remove("active");
 
     setTimeout(() => {
       const incomingChatLi = createChatLi("Thinking...", "incoming");

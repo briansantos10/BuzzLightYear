@@ -33,7 +33,9 @@ function showInfo() {
 
   introSection.classList.add("active");
   infoPage.classList.add("active");
+
   document.querySelector(".chatbox").classList.remove("active");
+  document.getElementById("quiz").classList.remove("active");
 }
 
 /* quiz stuff here */
