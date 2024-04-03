@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="chat.css" />
     <link rel="stylesheet" href="info.css" />
     <link rel="stylesheet" href="quiz.css" />
+    <link rel="stylesheet" href="school.css" />
+
     <title>SkillsUSA</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");
@@ -38,7 +40,7 @@
                       </a>
                       <a href="#" onclick="showSchool()">
                         <i class="fa-regular fa-image"></i>
-                        Our School
+                        Gallary
                       </a>
                       <a href="#" onclick="showInfo()">
                         <i class="fa-brands fa-readme"></i>
@@ -186,7 +188,7 @@
                         <div class="leftq">
                           <h1>
                             Welcome to<br />
-                            <span> the Quiz</span>
+                            the <span>Quiz</span>
                           </h1>
                           <p></p>
                           <p id="question"></p>
@@ -195,19 +197,19 @@
                           <div class="buttons">
                             <button id="btn0">
                               <span class="letter-box">A</span
-                              ><span id="choice0"></span>
+                              ><span class="choices" id="choice0"></span>
                             </button>
                             <button id="btn1">
                               <span class="letter-box">B</span
-                              ><span id="choice1"></span>
+                              ><span class="choices" id="choice1"></span>
                             </button>
                             <button id="btn2">
                               <span class="letter-box">C</span
-                              ><span id="choice2"></span>
+                              ><span class="choices" id="choice2"></span>
                             </button>
                             <button id="btn3">
                               <span class="letter-box">D</span
-                              ><span id="choice3"></span>
+                              ><span class="choices" id="choice3"></span>
                             </button>
                           </div>
                         </div>
@@ -233,11 +235,59 @@
 
                   <!-- End of quiz -->
 
-                  <div id="our-school-container" class="our-school-container">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellat maxime velit natus recusandae! Ea est possimus
-                    quasi quas officia alias, quos nostrum doloremque error
-                    cumque magni mollitia quisquam! Aperiam, velit!
+                  <div
+                    id="our-school-container"
+                    class="our-school-container wrapper"
+                  >
+                    <i id="left" class="fa-solid fa-angle-left"></i>
+                    <div class="carousel">
+                      <img
+                        src="assets/baking-600x600.jpg"
+                        alt="img"
+                        draggable="false"
+                      />
+                      <img
+                        src="assets/Cooking1-web1.jpg"
+                        alt="img"
+                        draggable="false"
+                      />
+                      <img
+                        src="assets/Cos1-web.jpg"
+                        alt="img"
+                        draggable="false"
+                      />
+                      <img
+                        src="assets/Dusting-web.jpg"
+                        alt="img"
+                        draggable="false"
+                      />
+                      <img
+                        src="assets/ECE5-web.jpg"
+                        alt="img"
+                        draggable="false"
+                      />
+                      <img
+                        src="assets/fastnacht-1-600x600.jpg"
+                        alt="img"
+                        draggable="false"
+                      />
+                      <img
+                        src="assets/Landscaping-web1.jpg"
+                        alt="img"
+                        draggable="false"
+                      />
+                      <img
+                        src="assets/Sewing2-web.jpg"
+                        alt="img"
+                        draggable="false"
+                      />
+                      <img
+                        src="assets/ITA2students-web.jpg"
+                        alt="img"
+                        draggable="false"
+                      />
+                    </div>
+                    <i id="right" class="fa-solid fa-angle-right"></i>
                   </div>
 
                   <div id="chat-input" class="chat-input">
@@ -268,5 +318,6 @@
     <script src="/main.js"></script>
     <script src="script.js"></script>
     <script src="quiz.js"></script>
+    <script src="school.js"></script>
   </body>
 </html>

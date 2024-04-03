@@ -162,29 +162,29 @@ Quiz.prototype.guess = function (answer) {
 
 var questions = [
   new Question(
-    "Click any button to continue: ",
-    ["Click", "To", "Begin", "Here!"],
+    "Double click any button to continue",
+    ["Click", "to", "Begin", "Here!"],
     "Click"
   ),
   new Question(
-    "How many Members are in SkillsUSA?",
-    ["200", "213", "2334", "0"],
-    "200"
+    "How many student members   are in SkillsUSA?",
+    ["209,620", "21,263", "359,169", "4,718"],
+    "359,169"
+  ),
+  new Question(
+    "Among the following, which is NOT one of the core values of SkillsUSA?",
+    ["Integrity", "Patience ", "Respect", "Responsibility "],
+    "Patience"
+  ),
+  new Question(
+    "Which of the following are examples of professional skills that SkillsUSA emphasizes?    ",
+    ["Teamwork", "Creativity", "Communication", "All of the above"],
+    "All of the above"
   ),
   new Question(
     "What does Blue symbolize within SkillsUSA?",
     ["Justice", "Unity", "Alliance", "Joy"],
     "Unity"
-  ),
-  new Question(
-    "Which one doesn't belong within our pledge?",
-    ["Stealing", "Justice", "Unity", "Joy"],
-    "Stealing"
-  ),
-  new Question(
-    "How many years has SkillsUSA been around?",
-    ["239", "23", "0", "100"],
-    "100"
   ),
 ];
 
@@ -244,16 +244,6 @@ function turnLightOff() {
     .catch((error) => {
       console.error("Error turning off light:", error);
     });
-}
-
-function showSchool() {
-  document.querySelector(".intro").style.display = "none";
-  document.getElementById("quiz").classList.remove("active");
-  document.querySelector(".intro").classList.remove("active");
-  document.querySelector(".chatbox").classList.remove("active");
-  document.getElementById("info_page").classList.remove("active");
-
-  document.getElementById("our-school-container").style.display = "block";
 }
 
 const progressBar = document.getElementById("progress-bar");

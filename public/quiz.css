@@ -6,12 +6,11 @@
   display: flex;
   flex-direction: column;
   height: 80vh;
-  padding: 140px 20px 100px;
   width: 110%;
+  justify-content: center;
 }
 .quiz-container #quiz {
   width: 100%;
-  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -29,38 +28,41 @@
   height: 60px;
   line-height: 2rem;
 }
-.quiz-container .leftq #quiz h1 {
-  color: rgba(95, 90, 140, 1);
+.quiz-container .leftq h1 {
+  color: #565355;
   font-size: 3.5rem;
   line-height: 4rem;
-  margin-bottom: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 3.5rem;
+}
+.quiz-container .leftq span {
+  color: rgba(46, 108, 171, 1);
 }
 
-.quiz-container .leftq #quiz p {
-  color: #565355;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.quiz-container .leftq p {
+  color: #3c4c4d;
   line-height: normal;
 }
-
 .quiz-container .rightq {
   width: 100%;
 }
-
 .quiz-container .rightq .buttons {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
+  gap: 1rem;
 }
-
 .quiz-container .rightq .buttons button {
   height: 80px;
   width: 100%;
   border: none;
-  border-radius: 30px;
+  border-radius: 15px;
   padding: 10px;
-  background-color: #dadada;
+  background-color: #c4c7c5;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
 }
 
 .quiz-container .option {
@@ -70,16 +72,19 @@
 .quiz-container .letter-box {
   width: 50px;
   height: 50px;
-  color: #dadada;
+  color: #c4c7c5;
   background-color: white;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   margin-right: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
   font-size: 20px;
 }
-
+.quiz-container .buttons .choices {
+  color: #565355;
+  font-size: 17px;
+}
 .quiz-container .buttons button:hover {
   background: rgba(95, 90, 140, 1);
   cursor: pointer;
@@ -132,13 +137,13 @@
 }
 
 .quiz-container #score-container h2 {
-  color: rgba(95, 90, 140, 1);
+  color: #2e6cab;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
 .quiz-container #score {
-  color: rgba(95, 90, 140, 1);
+  color: #2e6cab;
   font-size: 3.5rem;
   line-height: 4rem;
 }
@@ -152,8 +157,8 @@
 .quiz-container #try-again,
 .quiz-container #bonus-button {
   display: none;
-  background-color: rgba(95, 90, 140, 1);
-  color: #fff;
+  background-color: #2e6cab;
+  color: white;
   font-size: 20px;
   padding: 10px 20px;
   border: none;
@@ -170,53 +175,4 @@
 .quiz-container #try-again:focus,
 .quiz-container #bonus-button:focus {
   outline: none;
-}
-
-.our-school-container {
-  display: none;
-  animation: fadeIn 1.4s ease-in-out;
-  text-align: center;
-  height: 80vh;
-  padding: 30px 20px 100px;
-  width: 100%;
-}
-.our-school-container h1 {
-  padding-bottom: 20px;
-  text-align: center;
-  padding-right: 130px;
-}
-
-.our-school-container p {
-  padding-bottom: 20px;
-  text-align: center;
-  padding-right: 130px;
-}
-
-.gallery {
-  --s: 150px;
-  --g: 10px;
-  --f: 1.5;
-
-  display: grid;
-  gap: var(--g);
-  width: calc(3 * var(--s) + 2 * var(--g));
-  aspect-ratio: 1;
-  grid-template-columns: repeat(3, auto);
-}
-
-.gallery > img {
-  width: 0;
-  height: 0;
-  min-height: 100%;
-  min-width: 100%;
-  object-fit: cover;
-  cursor: pointer;
-  filter: grayscale(80%);
-  transition: 0.35s linear;
-}
-
-.gallery img:hover {
-  filter: grayscale(0);
-  width: calc(var(--s) * var(--f));
-  height: calc(var(--s) * var(--f));
 }
